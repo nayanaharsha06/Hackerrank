@@ -1,0 +1,40 @@
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Solution {
+
+    // Method to find the smallest missing positive integer
+    public int firstMissingPositive(int[] nums) {
+        HashSet<Integer> set = new HashSet<>();
+        
+        // Insert all positive numbers into the set
+        for (int num : nums) {
+            if (num > 0) {
+                set.add(num);
+            }
+        }
+        
+        // Find the smallest missing positive integer
+        int i = 1;
+        while (true) {
+            if (!set.contains(i)) {
+                return i;
+            }
+            i++;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+        sc.close(); // Close the scanner to prevent resource leak
+
+        Solution sol = new Solution();
+        int res = sol.firstMissingPositive(nums); // Call the method to get the smallest missing positive integer
+        System.out.println(res); // Output the result
+    }
+}
