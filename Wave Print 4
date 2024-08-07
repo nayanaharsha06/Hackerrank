@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+
+public class Solution {
+    public ArrayList<Integer> func(int[][] grid) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int n = grid.length; // Number of rows
+        int m = grid[0].length;
+        int j = 0;
+        while(j < m) {
+            // Traverse down the column
+            for(int i = 0; i < n; i++) {
+                list.add(grid[i][j]);
+            }
+            
+            j++;
+            
+            // Traverse up the column (if not the last column)
+            if (j < m) {
+                for(int i = n - 1; i >= 0; i--) {
+                    list.add(grid[i][j]);
+                }
+            }
+            
+            j++;
+        }
+        return list;
+
+}
+        
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[][] grid = new int[n][m];
+        
+        for(int i = 0;  i <n; i++){
+            for(int j = 0; j < m; j++){
+                grid[i][j] = sc.nextInt();
+            }
+        }
+        Solution sol = new Solution();
+        ArrayList<Integer> res = sol.func(grid);
+        for(int nums : res){
+            System.out.print(nums+" ");
+        }
+    }
+}
+    
