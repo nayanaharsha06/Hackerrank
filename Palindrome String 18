@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public boolean func(String str){
+        StringBuilder res = new StringBuilder(str);
+        str = str.toLowerCase();
+        res.reverse();
+        String reversed= res.toString();
+        
+        return str.equals(reversed);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Solution sol  = new Solution();
+        boolean res = sol.func(str);
+        System.out.println(res);
+    }
+}
