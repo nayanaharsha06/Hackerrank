@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public String func(String str){
+        String[] arr = str.split(" ");
+        StringBuilder res = new StringBuilder();
+        
+        for(String word : arr){
+            String reversedword = new StringBuilder(word).reverse().toString();
+            res.append(reversedword).append(" ");
+        }
+        return res.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Solution sol = new Solution();
+        String result  = sol.func(str);
+        System.out.println(result);
+        
+    }
+}
