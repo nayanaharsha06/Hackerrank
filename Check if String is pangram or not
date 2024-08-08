@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public boolean func(String str){
+        char[] arr = str.toCharArray();
+        if(arr.length < 26) return false;
+        int[] arr1 = new int[26];
+        for(char c : arr){
+            arr[c - 'a']++;
+        }
+        
+        for(int i : arr1){
+            if(arr[i] <= 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Solution sol  = new Solution();
+        boolean res = sol.func(str);
+        System.out.println(res);
+    }
+}
