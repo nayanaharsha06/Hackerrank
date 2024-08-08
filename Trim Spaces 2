@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public String func(String str){
+        str = str.replace(" ","");
+        return str;
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Solution sol  = new Solution();
+        String res = sol.func(str);
+        System.out.println(res);
+    }
+}
