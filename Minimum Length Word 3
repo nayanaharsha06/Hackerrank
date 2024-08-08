@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public String func(String str){
+        String[] arr = str.split(" ");
+        String res = "";
+        int min = Integer.MAX_VALUE;
+        
+        for(String word : arr){
+            
+            if(word.length() < min ){
+                 min = Math.min(word.length(), min);
+                 res = word;
+            }
+        }
+        return res;
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Solution sol  = new Solution();
+        String res = sol.func(str);
+        System.out.println(res);
+    }
+}
