@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public String func(String str,String[] words){
+        str = str.replace(words[0], words[1]);
+        return str;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String s = sc.nextLine(); 
+        String[] words = s.split(" ");
+        Solution sol  = new Solution();
+        String res = sol.func(str, words);
+        System.out.println(res);
+    }
+}
