@@ -1,0 +1,22 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public int func(String str){
+        int res = 0;
+        for(int i = 0 ; i < str.length(); i++){
+            char c = str.charAt(i);
+            res= res * 26 + (c -'A'+1);
+        }
+        return res;
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        Solution sol  = new Solution();
+        int res = sol.func(str);
+        System.out.println(res);
+    }
+}
