@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class JumbledNumberChecker {
+
+    // Method to check if the number is jumbled
+    public static boolean isJumbled(int num) {
+        String numStr = Integer.toString(num);
+
+        // Iterate through the digits and check differences
+        for (int i = 1; i < numStr.length(); i++) {
+            int prevDigit = numStr.charAt(i - 1) - '0';
+            int currentDigit = numStr.charAt(i) - '0';
+
+            // Check if the difference between neighboring digits is more than 1
+            if (Math.abs(prevDigit - currentDigit) > 1) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+   //     System.out.print("Enter an integer: ");
+        int number = sc.nextInt();
+        
+        boolean result = isJumbled(number);
+        System.out.println(result);
+        
+        sc.close();
+    }
+}
